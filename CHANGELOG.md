@@ -1,5 +1,9 @@
 # Change log
 
+## 0.3.2 (release date: 23.11.2017)
+
+* `right-order`: don't report about unexpected comment for some reserved words
+
 ## 0.3.1 (release date: 20.11.2017)
 
 * Required `npm@5`
