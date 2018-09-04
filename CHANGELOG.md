@@ -1,5 +1,9 @@
 # Change log
 
+## 0.4.0 (release date: 11.12.2017)
+
+* Consider shared settings for `domains` and `knownNamespaces` specifying
+
 ## 0.3.2 (release date: 23.11.2017)
 
 * `right-order`: don't report about unexpected comment for some reserved words

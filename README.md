@@ -16,7 +16,7 @@ npm i eslint-plugin-goog --save-dev
 
 ```
 {
-	"plugins": [
+	plugins: [
 		"goog"
 	]
 }
@@ -26,7 +26,7 @@ npm i eslint-plugin-goog --save-dev
 
 ```
 {
-	"rules": [
+	rules: [
 		"goog/no-undeclared-deps": ...
 	]
 }
@@ -45,8 +45,10 @@ Use this rule to detect usage of undeclared dependencies (missed `goog.require(<
 	domains: string[], // List of root namespaces that rule will use for report as undeclared
 	excludedPatterns: string[], // List of patterns (string literally or RegExp pattern string) that will excluded from reports
 	knownNamespaces: string[] // List of provided namespaces that rule will be able to fix
-}]
+}
 ```
+
+Also `domains` and `knownNamespaces` can be specified by shared settings
 
 **Caveat**: rule fixes only namespaces that are given by options `knownNamespaces`. Plugin provides module `nsUtils` to ease retrieving of known namespaces, e.x.:
 
@@ -62,7 +64,7 @@ const knownNamespaces = [
 
 module.exports = {
 	// ...
-	"rules": [
+	rules: [
 		"goog/no-undeclared-deps": ["error", {domains: ["myapp"], knownNamespaces}]
 	]
 }
@@ -77,8 +79,10 @@ Use this rule to detect when declared dependencies (`goog.require(<namespace>)` 
 ```
 {
 	domains: string[] // List of root namespaces that rule will use for report as undeclared
-}]
+}
 ```
+
+Also `domains` can be specified by shared settings
 
 ### no-duplicates (fixable)
 

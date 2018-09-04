@@ -1,3 +1,4 @@
+const path = require('path');
 const rules = require('../index').rules;
 const RuleTester = require('eslint').RuleTester;
 
@@ -16,5 +17,5 @@ const ruleNames = [
 
 ruleNames.forEach((ruleName) => {
 	// eslint-disable-next-line global-require
-	ruleTester.run(ruleName, rules[ruleName], require('./' + ruleName));
+	ruleTester.run(ruleName, rules[ruleName], require(path.join(__dirname, 'rules', ruleName)));
 });

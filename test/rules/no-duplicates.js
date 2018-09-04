@@ -1,5 +1,5 @@
-const errors = require(`./helper`).errors;
-const concat = require(`./helper`).concat;
+const errors = require(`../helper`).errors;
+const concat = require(`../helper`).concat;
 
 module.exports = {
 	valid: [{
