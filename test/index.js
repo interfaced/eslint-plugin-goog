@@ -1,6 +1,6 @@
 const path = require('path');
-const rules = require('../index').rules;
-const RuleTester = require('eslint').RuleTester;
+const {RuleTester} = require('eslint');
+const {rules} = require('../index');
 
 const ruleTester = new RuleTester({
 	parserOptions: {

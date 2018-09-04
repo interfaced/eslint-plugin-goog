@@ -1,10 +1,11 @@
 {
   "name": "eslint-plugin-goog",
-  "version": "0.4.0",
-  "description": "ESLint plugin with rules that help validate goog.require/goog.provide",
-  "author": "Kirill Dronkin (http://dronkin.ru)",
+  "version": "1.0.0",
+  "description": "ESLint plugin for Closure Library",
   "license": "MIT",
+  "author": "Interfaced (http://interfaced.tv)",
   "contributors": [
+    "Kirill Dronkin (http://dronkin.ru)",
     "Vyatcheslav Zaytcev <vyatcheslav.lacki@gmail.com>",
     "Goryaynov Igor <ygreknomean@gmail.com>"
   ],
@@ -25,10 +26,10 @@
     "lib"
   ],
   "peerDependencies": {
-    "eslint": "^4.9.0"
+    "eslint": "^5.0.0"
   },
   "devDependencies": {
-    "eslint": "4.9.0",
+    "eslint": "^5.0.1",
     "eslint-config-interfaced": "0.1.0"
   },
   "dependencies": {
@@ -38,8 +39,7 @@
   "keywords": [
     "lint",
     "eslint",
-    "eslint-plugin",
-    "eslintplugin",
+    "plugin",
     "goog",
     "goog.require",
     "goog.provide",
