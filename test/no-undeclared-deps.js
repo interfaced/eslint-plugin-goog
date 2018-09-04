@@ -10,6 +10,17 @@ module.exports = {
 			`goog.require('ns.one.two.thee.four');`,
 			`ns.one.two.thee.four();`
 		)
+	}, {
+		options: [{
+			domains: [`ns`]
+		}],
+		code: concat(
+			`/**`,
+			` * ns.one.two.thee.four`,
+			` * @type {?}`,
+			` */`,
+			`const test = null;`
+		)
 	}],
 	invalid: [{
 		options: [{
@@ -78,7 +89,9 @@ module.exports = {
 			domains: [`ns`]
 		}],
 		code: `ns.one.two.thee.four();`,
-		errors: errors(`Dependency "ns.one.two.thee.four" is used but undeclared.`)
+		errors: errors(
+			`Dependency "ns.one.two.thee.four" is used but undeclared.`
+		)
 	}, {
 		options: [{
 			domains: [`ns`]
@@ -120,7 +133,7 @@ module.exports = {
 		}],
 		code: concat(
 			`/**`,
-			` * @type {ns.one.two.thee.four=}`,
+			` * @type {ns.one.two.thee.four|null}`,
 			` */`,
 			`const test = null;`
 		),

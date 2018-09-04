@@ -47,5 +47,28 @@ module.exports = {
 		errors: errors(
 			`Dependency "ns.one.two.thee.four" is declared but never used.`
 		)
+	}, {
+		options: [{
+			domains: [`ns`]
+		}],
+		code: concat(
+			`goog.require('ns.one.two.thee.four');`,
+			`/**`,
+			` * ns.one.two.thee.four`,
+			` * @type {?}`,
+			` */`,
+			`const test = null;`
+		),
+		output: concat(
+			`;`,
+			`/**`,
+			` * ns.one.two.thee.four`,
+			` * @type {?}`,
+			` */`,
+			`const test = null;`
+		),
+		errors: errors(
+			`Dependency "ns.one.two.thee.four" is declared but never used.`
+		)
 	}]
 };

@@ -1,5 +1,10 @@
 # Change log
 
+## 0.3.0 (release date: 31.10.2017)
+
+* Migrate to ESLint 4
+* More strict JSDoc parsing in `no-undeclared-deps` and `no-unused-deps`
+
 ## 0.2.0 (release date: 29.03.2017)
 
 * Added rule `right-order`
