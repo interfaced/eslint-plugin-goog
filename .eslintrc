@@ -1,0 +1,9 @@
+{
+  "parser": "espree",
+  "ecmaFeatures": {},
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": "interfaced"
+}

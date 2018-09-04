@@ -1,0 +1,46 @@
+{
+  "name": "eslint-plugin-goog",
+  "version": "0.2.0",
+  "description": "ESLint plugin with rules that help validate goog.require/goog.provide",
+  "repository" :{
+    "type" : "git",
+    "url" : "https://github.com/interfaced/eslint-plugin-goog.git"
+  },
+  "author": "Kirill Dronkin (http://dronkin.ru)",
+  "contributors": [
+    "Vyatcheslav Zaytcev <vyatcheslav.lacki@gmail.com>"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "test": "node ./test",
+    "lint": "eslint lib scripts test"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md",
+    "index.js",
+    "scripts",
+    "lib"
+  ],
+  "peerDependencies": {
+    "eslint": "^3.0.0"
+  },
+  "devDependencies": {
+    "eslint": "3.11.1",
+    "eslint-config-interfaced": "0.1.0"
+  },
+  "dependencies": {
+    "glob": "7.1.1"
+  },
+  "keywords": [
+    "lint",
+    "eslint",
+    "eslint-plugin",
+    "eslintplugin",
+    "goog",
+    "goog.require",
+    "goog.provide",
+    "Closure Library"
+  ]
+}
