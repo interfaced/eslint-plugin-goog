@@ -16,9 +16,9 @@ npm i eslint-plugin-goog --save-dev
 
 ```
 {
-  "plugins": [
-    "goog"
-  ]
+	"plugins": [
+		"goog"
+	]
 }
 ```
 
@@ -26,9 +26,9 @@ npm i eslint-plugin-goog --save-dev
 
 ```
 {
-  "rules": [
-    "goog/no-undeclared-deps": ...
-  ]
+	"rules": [
+		"goog/no-undeclared-deps": ...
+	]
 }
 ```
 
@@ -38,12 +38,13 @@ npm i eslint-plugin-goog --save-dev
 
 Use this rule to detect usage of undeclared dependencies (missed `goog.require(<namespace>)` expression)
 
-#### Options
+**Options**:
 
 ```
-"no-undeclared-deps": [<enabled>, {
-  domains: string[], // List of root namespaces that rule will use for report as undeclared
-  knownNamespaces: string[] // List of provided namespaces that rule will be able to fix
+{
+	domains: string[], // List of root namespaces that rule will use for report as undeclared
+	excludedPatterns: string[], // List of patterns (string literally or RegExp pattern string) that will excluded from reports
+	knownNamespaces: string[] // List of provided namespaces that rule will be able to fix
 }]
 ```
 
@@ -55,15 +56,15 @@ Use this rule to detect usage of undeclared dependencies (missed `goog.require(<
 const eslintPluginGoog = require("eslint-plugin-goog");
 
 const knownNamespaces = [
-  ...eslintPluginGoog.nsUtils.findByPattern(path.join(__dirname , "myapp", "**", "*.js")),
-  ...eslintPluginGoog.nsUtils.findByPattern(path.join(__dirname , "node_modules", "zombiebox", "**", "*.js")),
+	...eslintPluginGoog.nsUtils.findByPattern(path.join(__dirname , "myapp", "**", "*.js")),
+	...eslintPluginGoog.nsUtils.findByPattern(path.join(__dirname , "node_modules", "zombiebox", "**", "*.js")),
 ];
 
 module.exports = {
-  // ...
-  "rules": [
-    "goog/no-undeclared-deps": ["error", {domains: ["myapp"], knownNamespaces}]
-  ]
+	// ...
+	"rules": [
+		"goog/no-undeclared-deps": ["error", {domains: ["myapp"], knownNamespaces}]
+	]
 }
 ```
 
@@ -71,23 +72,17 @@ module.exports = {
 
 Use this rule to detect when declared dependencies (`goog.require(<namespace>)` expression) are unused in code
 
-#### Options
+**Options**:
 
 ```
-"no-unused-deps": [<enabled>, {
-  domains: string[] // List of root namespaces that rule will use for report as undeclared
+{
+	domains: string[] // List of root namespaces that rule will use for report as undeclared
 }]
 ```
 
 ### no-duplicates (fixable)
 
 Use this rule to prevent duplicates in `goog.require` or `goog.provide` expressions
-
-#### Options
-
-```
-"no-duplicates": [<enabled>]
-```
 
 ### right-order (fixable)
 
@@ -98,9 +93,3 @@ Use this rule to achieve right order of `goog` expressions. This rule does:
 * Checks that `goog.provide` goes before `goog.require`
 * Checks that there are no additional code or comments between `goog` expressions
 * Restricts nested `goog` expressions (parent AST node should have `Program` type)
-
-#### Options
-
-```
-"right-order": [<enabled>]
-```

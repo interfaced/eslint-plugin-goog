@@ -218,5 +218,33 @@ module.exports = {
 		errors: errors(
 			`Dependency "ns.one.two.thee.four" is used but undeclared.`
 		)
+	}, {
+		options: [{
+			domains: [`ns`],
+			excludedPatterns: [`thee.four`]
+		}],
+		code: concat(
+			`/**`,
+			` * @type {{key1: ns.one.two, key2: ns.thee.four}}`,
+			` */`,
+			`const test = null;`
+		),
+		errors: errors(
+			`Dependency "ns.one.two" is used but undeclared.`
+		)
+	}, {
+		options: [{
+			domains: [`ns`],
+			excludedPatterns: ['.+one.+']
+		}],
+		code: concat(
+			`/**`,
+			` * @type {{key1: ns.one.two, key2: ns.thee.four}}`,
+			` */`,
+			`const test = null;`
+		),
+		errors: errors(
+			`Dependency "ns.thee.four" is used but undeclared.`
+		)
 	}]
 };

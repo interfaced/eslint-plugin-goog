@@ -1,5 +1,10 @@
 # Change log
 
+## 0.3.1 (release date: 20.11.2017)
+
+* Required `npm@5`
+* `no-undeclared-deps`: added `excludedPatterns` option
+
 ## 0.3.0 (release date: 31.10.2017)
 
 * Migrate to ESLint 4
